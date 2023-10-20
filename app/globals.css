@@ -2,26 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+html,
+body {
+  font-family: var(--font-inter);
+}
+
+* {
+  font-family: var(--font-inter);
+}
+
+.blob {
+  background: white;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  animation: pulse-white 2s infinite;
+}
+.blob-red {
+  background: #c00;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-white {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgb(204, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(204, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgb(204, 0, 0, 0);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h1,
+h2,
+h3 {
+  font-family: var(--font-playfair-display);
+}
+h1 a,
+h2 a,
+h3 a {
+  font-family: var(--font-playfair-display);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:focus {
+  -moz-appearance: textfield;
+}
+
+.swiper-pagination {
+  @apply !bottom-[0px];
+}
+.swiper-pagination-bullet {
+  @apply !bg-[#cdcdcd] !h-[.5625rem] !w-[.5625rem] !opacity-100;
+}
+.swiper-pagination-bullet-active {
+  @apply scale-[1.444];
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply !text-white scale-[.5] opacity-60 hover:opacity-90;
+}
+.swiper-button-prev {
+  @apply !w-[70px] !h-[70px] p-5 border-2 rounded-full bg-[#ffffff68] lg:-translate-x-7 -translate-y-6 -translate-x-9;
+}
+.swiper-button-next {
+  @apply !w-[70px] !h-[70px] p-5 border-2 rounded-full bg-[#ffffff68] lg:translate-x-7 -translate-y-6 translate-x-9;
 }
