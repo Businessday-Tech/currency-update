@@ -47,3 +47,30 @@ export interface IExchange{
   xof_buy_rate:number,
   zar_buy_rate:number,
 }
+
+export interface ISymbolData  {
+  $id: string,
+  ID: number,
+  SYMBOL: string,
+  LAST_CLOSE: number,
+  TODAYS_CLOSE: number,
+  PERCENTAGE_CHANGE: number,
+  SYMBOL2: string
+}
+
+export interface IPost  {
+  id: number;
+  date: string;
+  content: string;
+  excerpt: string;
+  slug: string;
+  title: string;
+  status: string;
+  link:string;
+  type: string;
+  image: string;
+  author:string
+}
+
+export interface IPostWithImage extends IPost{ withImage?: boolean;
+  isLive?:boolean;}

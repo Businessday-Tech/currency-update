@@ -1,85 +1,20 @@
 const navigation = [
-  { name: "HOME", href: "#", current: true },
+  { name: "RATES", href: "#", current: true },
   {
-    name: "NEWSLETTERS",
+    name: "BUSINESS NEWS",
     current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
-  },
-  {
-    name: "COMPANIES AND MARKET",
-    current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
+    href:"https://businessday.ng/"
   },
   {
     name: "ECOMOMY",
     current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
-  },
-  {
-    name: "TECHNOLOGY",
-    current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
-  },
-  // {
-  //   name: "OPINION",
-  //   current: false,
-  //   children: [
-  //     { name: "Overview", href: "#" },
-  //     { name: "Members", href: "#" },
-  //     { name: "Calendar", href: "#" },
-  //     { name: "Settings", href: "#" },
-  //   ],
-  // },
+    href:"https://businessday.ng/category/business-economy/"
 
-  {
-    name: "DATA ANALYSIS",
-    current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
-  },
-  {
-    name: "CARTOON",
-    current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
   },
   {
     name: "BD CONFERENCES",
     current: false,
-    children: [
-      { name: "Overview", href: "#" },
-      { name: "Members", href: "#" },
-      { name: "Calendar", href: "#" },
-      { name: "Settings", href: "#" },
-    ],
+    href:"https://conferences.businessday.ng/"
   },
 ];
 

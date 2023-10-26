@@ -73,13 +73,15 @@ function MobileMenue({
                           />
                         </div>
 
-                        {navigation.map(({ name, children }) => (
+                        {navigation.map(({ name, href }) => (
                           <div
                             key={name}
                             className=" border-b border-b-[#cbcbcb5d]"
                           >
                             <div className=" py-[13px] text-[13px] font-bold cursor-pointer">
-                              {capitalCase(name)}
+                              <a href={href} className=" h-100 w-100">
+                                {capitalCase(name)}
+                              </a>                 
                             </div>
                             {/* {children?.length &&
                               children.map((link) => (
