@@ -6,8 +6,8 @@ import Script from 'next/script';
 import numeral from 'numeral';
 import React,{useEffect,useRef,useState} from 'react'
 
-const CurrencyConverter = ({data}:{data:{data:string,gon_response:string}}) => {
-    const [rates, setRates] = useState< {[K:string]:number}>()
+const CurrencyConverter = ({data}:{data:{[K:string]:number}}) => {
+    const [rates] = useState< {[K:string]:number}>(data)
     const [selected,SetSelected]=useState("usd")
     const othersRef=useRef<HTMLInputElement>(null)
     const [currencies,setCurrencies]=useState({
@@ -38,22 +38,22 @@ const CurrencyConverter = ({data}:{data:{data:string,gon_response:string}}) => {
                 return ({...x,naira:numeral(nairaValue).format("0.00")})
         })
     }
-    useEffect(() => {
-      const formattedRates=  Object.keys((window as unknown as {gon:IExchange}).gon).reduce((acc,value)=>{
-            const realValue=value.substring(0,3)
-                acc[realValue as keyof IPriceData]=(window as unknown as {gon:IExchange}).gon[value as keyof IExchange]
-                return acc
-        },
+    // useEffect(() => {
+    //   const formattedRates=  Object.keys((window as unknown as {gon:IExchange}).gon).reduce((acc,value)=>{
+    //         const realValue=value.substring(0,3)
+    //             acc[realValue as keyof IPriceData]=(window as unknown as {gon:IExchange}).gon[value as keyof IExchange]
+    //             return acc
+    //     },
 
-       {} as {[K:string]:number} )
-     setRates(formattedRates) 
-    }, [])
+    //    {} as {[K:string]:number} )
+    //  setRates(formattedRates) 
+    // }, [])
     
   return (
     <>   
      <div className=' lg:px-6 mb-10'>
         <div className="border border-slate-200 rounded-xl h-max mt-10 px-5 sm:px-14 py-20 pb-12">
-            <h4 className=' text-2xl font-bold text-center'>Currency Converter(Instantly Calculate Exchange Rates and Values)</h4>
+            <h3 className=' text-2xl font-bold text-center mx-auto max-w-xl'>Currency Converter(Instantly Calculate Exchange Rates and Values)</h3>
             <p className="font-lato text-[14px] text-center mt-3 mx-auto max-w-xl">Exchange rates can fluctuate frequently and can vary between financial institutions. Always verify rates with official sources before making any financial decisions</p>
             <div className="flex flex-col sm:flex-row items-center justify-between mt-10 relative">
                 <div className="flex items-center justify-center border border-[#cdcdcd] w-full sm:w-0 basis-[100%] sm:basis-[45%] h-[92.98px] py-8 sm:py-0 px-2 lg:px-4 mb-5 sm:mb-0">
@@ -96,7 +96,11 @@ const CurrencyConverter = ({data}:{data:{data:string,gon_response:string}}) => {
                                             </div>
                                             </div>
                                             <div className=' flex justify-center'>
-                                            <button className="bg-[#F91212] hover-bg-[#F91212]/80 transition-all duration-150 ease-linear text-white px-[100px] py-[10px] text-base rounded-md mt-20">Clear</button>
+                                            <button className="bg-[#F91212] hover-bg-[#F91212]/80 transition-all duration-150 ease-linear text-white px-[100px] py-[10px] text-base rounded-md mt-20" onClick={()=>setCurrencies(
+                                                {
+                                                    naira:"",
+                                                    others:""
+                                                })}>Clear</button>
                                             </div>
                                             </div>
     </div>

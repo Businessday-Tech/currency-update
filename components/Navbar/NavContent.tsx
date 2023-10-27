@@ -1,5 +1,5 @@
 "use client";
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { Container } from "../Container";
 import SvgIconStyle from "../SvgIconStyle";
 import Image from "next/image";
@@ -11,7 +11,7 @@ const NavContent = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className=" bg-[#F5F5F5]">
-      <div className="flex border-b border-b-[rgba(234,0,41,0.1)] py-[6px] hidden">
+      <div className=" border-b border-b-[rgba(234,0,41,0.1)] py-[6px] hidden">
         <div className=" flex-1 border-r border-r-[rgba(234,0,41,0.1)] text-right  pr-[13px]">
           <Link
             href={"/login"}

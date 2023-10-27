@@ -13,7 +13,7 @@ const MixBlock = ({ title, separator,mobile,data }: Props) => {
   return (
     <div className={(" lg:px-1" )+ (separator ? " border-l border-l-[#EA0029] " : "")}>
       {title && (
-        <h6 className={`font-semibold ${mobile?" mb-[6px] text-lg font-bold":" text-[#EA0029]"}  text-[10px] mb-4`}>
+        <h6 className={`font-semibold text-center md:text-left ${mobile?" mb-[6px] text-lg font-bold":" text-[#EA0029]"}  text-[10px] mb-4`}>
           {title}
         </h6>
       )}
@@ -22,9 +22,7 @@ const MixBlock = ({ title, separator,mobile,data }: Props) => {
           key={index}
           {...articule}
           withImage={mobile&&(index === 0) }
-          lastBlock={index===(data.length-1)}
-          
-        />
+          lastBlock={index===(data.length-1)} />
       ))}
     </div>
   );

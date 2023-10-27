@@ -44,48 +44,58 @@ export function shuffle<T>(array:T[]) {
   export let currencyNames= { 
     usd: {
       name:"United States dollar",
-      flag:"US"
+      flag:"US",
+      diff:10
     },
     gbp: {
       name:"Pound sterling",
-      flag:"US"
+      flag:"GB",
+      diff:20
     },
     eur: {
       name:"Euro",
-      flag:"EU"
+      flag:"EU",
+      diff:20
     },
     cad: {
       name:"Canadian dollar",
-      flag:"CA"
+      flag:"CA",
+      diff:50
     },
     zar: {
       name:"South African rand",
-      flag:"ZA"
+      flag:"ZA",
+      diff:10
     },
     aed: {
       name:"United Arab Emirates dirham",
-      flag:"AE"
+      flag:"AE",
+      diff:20
     },
     ghs: {
       name:"Ghanaian Cedi",
-      flag:"GH"
-
+      flag:"GH",
+      diff:10
     },
     xaf: {
       name:"CFA franc BEAC",     
-       flag:"CF"
+       flag:"CF",
+       diff:30
     },
     xof: {
       name:"CFA franc BCEAO",
-      flag:"SN"
+      flag:"SN",
+      diff:20
     },
     cny: {
       name:"Chinese Yuan",
-      flag:"CN"
+      flag:"CN",
+      diff:10
     },
     aud: {
       name:"Australian Dollar",
-      flag:"AU"
+      flag:"AU",
+      diff:30
     },
   }
 
@@ -186,13 +196,15 @@ export const getTableList=(currencyList:IPriceData,table:typeof table1|typeof ta
    return currencyList?.[leadCurrency].slice(0,last).map((mydata,index) => {
       return({
         date:format(new Date(currencyList[leadCurrency][index]?.[0]), "dd/MM/yyyy"),
-        list:  Object.keys(currencyList as IPriceData).filter((stats)=>table[stats as keyof typeof table]).map(value=> currencyList[value as keyof typeof  currencyList][index]?.[1])
+        list:  Object.keys(currencyList as IPriceData).filter((stats)=>table[stats as keyof typeof table]).map(value=>( {
+          sell:currencyList[value as keyof typeof  currencyList][index]?.[1],
+          buy:currencyList[value as keyof typeof  currencyList][index]?.[1]-currencyNames[value as keyof typeof  currencyNames].diff
+        }))
       })
     }   
     ).filter(newStats=>{
-      
       const hasValue=set.has(newStats.date)
       set.add(newStats.date)
-      return !hasValue && !(newStats.list.some((x)=>x<=27))
+      return !hasValue && !(newStats.list.some((x)=>x.sell<=27))
     })
 }

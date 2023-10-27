@@ -53,7 +53,7 @@ const MarketsStrip = ({tickers}:Props) => {
             href="https://businessday.ng/category/markets/"
             className=" visited:text-white hover:underline text-[11px]"
           >
-            Visit Markets Data
+            NGX Markets Update
           </a>
         </div>
       </Container>

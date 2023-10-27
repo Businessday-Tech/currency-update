@@ -1,13 +1,12 @@
 import { IPostWithImage } from "@/bday";
-import { format, formatDistanceToNow, formatDistanceToNowStrict } from "date-fns";
+import { formatDistanceToNowStrict } from "date-fns";
 import Image from "next/image";
 import React from "react";
 interface Props extends IPostWithImage {
   lastBlock?: boolean;
 };
 
-export const ThumbnailBlock = ({ withImage,image, lastBlock, title,excerpt,link,date,author }: Props) => {
-  console.log({ withImage,image, lastBlock, title,excerpt })
+export const ThumbnailBlock = ({ withImage,image, lastBlock, title,excerpt,link,date }: Props) => {
   return (
     <div
       className={
@@ -28,8 +27,7 @@ export const ThumbnailBlock = ({ withImage,image, lastBlock, title,excerpt,link,
       )}
       <div className="px-4 py-6 lg:p-0 ">
           <h2 className="title text-[20px] leading-[28px] mb-1"><a href={link} className=" hover:underline hover:text-[#EA0029]">{title}</a></h2>
-          {excerpt&&<p 
-          className=" mt-3 mb-[22px] text-[#66605C] text-[12px] max-w-xs line-clamp-2 lg:hidden" 
+          {excerpt&&<div className=" mt-3 mb-[22px] text-[#66605C] text-[12px] max-w-xs line-clamp-2 lg:hidden" 
           dangerouslySetInnerHTML={{__html:excerpt}}/>}
         <div className=" mt-3">
         <p className=" text-[#4B5563] text-[10px]">
