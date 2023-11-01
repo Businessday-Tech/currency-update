@@ -1,4 +1,3 @@
-import ProgressBar from "@/components/ProgressBar";
 import "./globals.css";
 
 import { Inter, Playfair_Display } from "next/font/google";
@@ -10,7 +9,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Business News Nigeria | Daily Updates | Businessday.ng",
+  title: "BD Currency Update | Latest FX update",
   description:
     "Business news in Nigeria. Financial news. Exclusive news & analysis. Deep research and intelligence reports. In-Depth Analysis.",
 };
