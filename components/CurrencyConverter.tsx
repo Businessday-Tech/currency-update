@@ -52,7 +52,7 @@ const CurrencyConverter = ({data}:{data:{[K:string]:number}}) => {
   return (
     <>   
      <div className=' lg:px-6 mb-10'>
-        <div className="border border-slate-200 rounded-xl h-max mt-10 px-5 sm:px-14 py-20 pb-12">
+        <div className="border border-slate-200 rounded-xl h-max mt-10 px-5 sm:px-12 py-10 pb-6">
             <h3 className=' text-2xl font-bold text-center mx-auto max-w-xl'>Currency Converter(Instantly Calculate Exchange Rates and Values)</h3>
             <p className="font-lato text-[14px] text-center mt-3 mx-auto max-w-xl">Exchange rates can fluctuate frequently and can vary between financial institutions. Always verify rates with official sources before making any financial decisions</p>
             <div className="flex flex-col sm:flex-row items-center justify-between mt-10 relative">
