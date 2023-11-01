@@ -60,7 +60,7 @@ body {
   }
 }
 
-h1,
+/* h1,
 h2,
 h3 {
   font-family: var(--font-playfair-display);
@@ -69,7 +69,7 @@ h1 a,
 h2 a,
 h3 a {
   font-family: var(--font-playfair-display);
-}
+} */
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

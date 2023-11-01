@@ -96,7 +96,7 @@ const CurrencyConverter = ({data}:{data:{[K:string]:number}}) => {
                                             </div>
                                             </div>
                                             <div className=' flex justify-center'>
-                                            <button className="bg-[#F91212] hover-bg-[#F91212]/80 transition-all duration-150 ease-linear text-white px-[100px] py-[10px] text-base rounded-md mt-20" onClick={()=>setCurrencies(
+                                            <button className="bg-[#F91212] hover-bg-[#F91212]/80 transition-all duration-150 ease-linear text-white px-[100px] py-[10px] text-base rounded-md mt-8" onClick={()=>setCurrencies(
                                                 {
                                                     naira:"",
                                                     others:""

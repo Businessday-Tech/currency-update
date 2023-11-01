@@ -26,7 +26,7 @@ export const ThumbnailBlock = ({ withImage,image, lastBlock, title,excerpt,link,
         </div>
       )}
       <div className="px-4 py-6 lg:p-0 ">
-          <h2 className="title text-[20px] leading-[28px] mb-1"><a href={link} className=" hover:underline hover:text-[#EA0029]">{title}</a></h2>
+          <h2 className="title text-[20px] font-bold leading-[28px] my-1"><a href={link} className=" hover:underline hover:text-[#EA0029]">{title}</a></h2>
           {excerpt&&<div className=" mt-3 mb-[22px] text-[#66605C] text-[12px] max-w-xs line-clamp-2 lg:hidden" 
           dangerouslySetInnerHTML={{__html:excerpt}}/>}
         <div className=" mt-3">
