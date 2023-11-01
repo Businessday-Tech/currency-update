@@ -74,7 +74,7 @@ const footerLink={
     },
     {
       name: "LinkedIn",
-      href: "https://www.linkedin.com/company/data2bots/",
+      href: "https://ng.linkedin.com/company/businessday-media-ltd",
       icon: (props: SVGProps<SVGSVGElement>) => (
         <svg
           stroke="currentColor"
