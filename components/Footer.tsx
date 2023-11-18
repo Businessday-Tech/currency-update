@@ -1,40 +1,39 @@
-import React, { SVGProps } from 'react'
-import { Container } from './Container'
-import Image from 'next/image'
+import React, { SVGProps } from "react";
+import { Container } from "./Container";
+import Image from "next/image";
 
-
-const footerLink={
-  support:[
+const footerLink = {
+  support: [
     {
-      text:"Help Centre",
-      link:"#"
+      text: "Help Centre",
+      link: "#",
     },
     {
-      text:"Contact Us",
-      link:"#"
+      text: "Contact Us",
+      link: "#",
     },
     {
-      text:"About Us",
-      link:"#"
+      text: "About Us",
+      link: "#",
     },
   ],
-  others:[
+  others: [
     {
-      text:"BusinessDay Conferences & Events",
-      link:"https://conferences.businessday.ng/"
+      text: "BusinessDay Conferences & Events",
+      link: "https://conferences.businessday.ng/",
     },
     {
-      text:"BusinessDay Research",
-      link:"https://businessday.ng/category/research-post/"
+      text: "BusinessDay Research",
+      link: "https://businessday.ng/category/research-post/",
     },
     {
-      text:"BusinessDay Legal",
-      link:"https://businessday.ng/category/news/legal-business/"
+      text: "BusinessDay Legal",
+      link: "https://businessday.ng/category/news/legal-business/",
     },
     {
-      text:"Currency Converter",
-      link:"#"
-    },  
+      text: "Currency Converter",
+      link: "#",
+    },
   ],
   social: [
     {
@@ -92,37 +91,44 @@ const footerLink={
       name: "Youtube",
       href: "https://www.youtube.com/@BusinessDayNG",
       icon: (props: SVGProps<SVGSVGElement>) => (
-        <svg 
-        stroke="currentColor" 
-        fill="currentColor" 
-        strokeWidth="0" 
-        viewBox="0 0 16 16" 
-        {...props}
-        xmlns="http://www.w3.org/2000/svg">
-        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z">
-        </path>
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          strokeWidth="0"
+          viewBox="0 0 16 16"
+          {...props}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"></path>
         </svg>
       ),
     },
   ],
-}
+};
 const Footer = () => {
   return (
-    <div className=' text-white bg-black mt-12'>
-        <Container className='flex flex-col lg:flex-row py-[72px] justify-between gap-8'>
-          <div className="lg:w-3/5 ">
-          <div className=' w-full flex justify-start'>
+    <div className=" text-white bg-black mt-12">
+      <Container className="flex flex-col lg:flex-row py-[72px] justify-between gap-8">
+        <div className="lg:w-3/5 ">
+          <div className=" w-full flex justify-start">
             <Image
-            className=" scale-50 -translate-x-1/4"
+              className=" scale-50 -translate-x-1/4"
               src={"/images/logo.png"}
               width={377}
               height={65}
               alt="logo"
             />
           </div>
-            <p className=' text-xs max-w-[546px]'>Business Day, established in 2001, is a daily business newspaper based in Lagos. It is the only Nigerian newspaper with a bureau in Accra, Ghana. It has both daily and Sunday titles. It circulates in Nigeria and Ghana {" "}
-            <strong><a href='https://businessday.ng/'>Read More...</a></strong></p>
-            <div className="flex mt-4 space-x-6">
+          <p className=" text-xs max-w-[546px]">
+            Business Day, established in 2001, is a daily business newspaper
+            based in Lagos. It is the only Nigerian newspaper with a bureau in
+            Accra, Ghana. It has both daily and Sunday titles. It circulates in
+            Nigeria and Ghana{" "}
+            <strong>
+              <a href="https://businessday.ng/">Read More...</a>
+            </strong>
+          </p>
+          <div className="flex mt-4 space-x-6">
             {footerLink.social.map((item) => (
               <a
                 key={item.name}
@@ -134,27 +140,38 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          </div>
-          <div className="lg:w-2/5 flex justify-between">
-<div className='flex flex-col gap-y-3'>
-<strong className=' text-[13px]'>Support</strong>
-{footerLink.support.map(({text,link})=><a className=' text-[13px] text-[#A8AAAD]' href={link} key={text}>{text}</a>)}
-</div>
-<div className='flex flex-col gap-y-3'>
-<strong className=' text-[13px]'>OTHER PAGES</strong>
-{footerLink.others.map(({text,link})=><a className=' text-[13px] text-[#A8AAAD]' href={link} key={text}>{text}</a>)}  
-</div>
-      </div>
-        </Container>
-        <div className='bg-[#EA0029]'>
-        <Container className='flex items-center flex-col lg:flex-row justify-between py-4'>
-           <p className=' text-[13px]'>© 2023 - BusinessDay NG. All Rights Reserved.</p> 
-           <p className=' text-[13px]'>Website Design: BusinessDay Digital Team</p> 
-        </Container>          
         </div>
-
+        <div className="lg:w-2/5 flex justify-between">
+          <div className="flex flex-col gap-y-3">
+            <strong className=" text-[13px]">Support</strong>
+            {footerLink.support.map(({ text, link }) => (
+              <a className=" text-[13px] text-[#A8AAAD]" href={link} key={text}>
+                {text}
+              </a>
+            ))}
+          </div>
+          <div className="flex flex-col gap-y-3">
+            <strong className=" text-[13px]">OTHER PAGES</strong>
+            {footerLink.others.map(({ text, link }) => (
+              <a className=" text-[13px] text-[#A8AAAD]" href={link} key={text}>
+                {text}
+              </a>
+            ))}
+          </div>
+        </div>
+      </Container>
+      <div className="bg-[#EA0029]">
+        <Container className="flex items-center flex-col lg:flex-row justify-between py-4">
+          <p className=" text-[13px]">
+            © 2023 - BusinessDay NG. All Rights Reserved.
+          </p>
+          <p className=" text-[13px]">
+            Website Design: BusinessDay Digital Team
+          </p>
+        </Container>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

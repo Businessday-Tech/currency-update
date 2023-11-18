@@ -81,7 +81,7 @@ function MobileMenue({
                             <div className=" py-[13px] text-[13px] font-bold cursor-pointer">
                               <a href={href} className=" h-100 w-100">
                                 {capitalCase(name)}
-                              </a>                 
+                              </a>
                             </div>
                             {/* {children?.length &&
                               children.map((link) => (

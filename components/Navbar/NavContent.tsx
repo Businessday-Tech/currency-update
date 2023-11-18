@@ -37,11 +37,10 @@ const NavContent = () => {
               className=" w-[15px] h-[20px] scale-125 text-black hover:cursor-pointer"
               src="/icons/bcrumb.svg"
             />
-
           </div>
           <div>
             <Image
-            className=" scale-75"
+              className=" scale-75"
               src={"/images/logo.png"}
               width={377}
               height={65}

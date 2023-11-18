@@ -2,12 +2,22 @@ import { IPost, IPriceData } from "@/bday";
 import { format } from "date-fns";
 
 export function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(" ");
 }
-export const getNeededInfo = (article:any):IPost => {
-  const { id, date, content, excerpt, slug, title, status, type, yoast_head_json,link } =
-    article;
-  return ({
+export const getNeededInfo = (article: any): IPost => {
+  const {
+    id,
+    date,
+    content,
+    excerpt,
+    slug,
+    title,
+    status,
+    type,
+    yoast_head_json,
+    link,
+  } = article;
+  return {
     id,
     date,
     content: content.rendered,
@@ -19,101 +29,102 @@ export const getNeededInfo = (article:any):IPost => {
     link,
     type,
     image: yoast_head_json.og_image[0].url,
-    author:yoast_head_json.author
-  });
+    author: yoast_head_json.author,
+  };
 };
 
-export function shuffle<T>(array:T[]) {
-    let currentIndex = array.length,  randomIndex;
-  
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
-  
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
+export function shuffle<T>(array: T[]) {
+  let currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
 
-  export let currencyNames= { 
-    usd: {
-      name:"United States dollar",
-      flag:"US",
-      diff:10
-    },
-    gbp: {
-      name:"Pound sterling",
-      flag:"GB",
-      diff:20
-    },
-    eur: {
-      name:"Euro",
-      flag:"EU",
-      diff:20
-    },
-    cad: {
-      name:"Canadian dollar",
-      flag:"CA",
-      diff:50
-    },
-    zar: {
-      name:"South African rand",
-      flag:"ZA",
-      diff:10
-    },
-    aed: {
-      name:"United Arab Emirates dirham",
-      flag:"AE",
-      diff:20
-    },
-    ghs: {
-      name:"Ghanaian Cedi",
-      flag:"GH",
-      diff:10
-    },
-    xaf: {
-      name:"CFA franc BEAC",     
-       flag:"CF",
-       diff:30
-    },
-    xof: {
-      name:"CFA franc BCEAO",
-      flag:"SN",
-      diff:20
-    },
-    cny: {
-      name:"Chinese Yuan",
-      flag:"CN",
-      diff:10
-    },
-    aud: {
-      name:"Australian Dollar",
-      flag:"AU",
-      diff:30
-    },
-  }
+  return array;
+}
 
-  
-export const table1={
+export let currencyNames = {
   usd: {
-    name:"United States dollar",
-    flag:"US"
+    name: "United States dollar",
+    flag: "US",
+    diff: 10,
   },
   gbp: {
-    name:"Pound sterling",
-    flag:"US"
+    name: "Pound sterling",
+    flag: "GB",
+    diff: 20,
   },
   eur: {
-    name:"Euro",
-    flag:"EU"
+    name: "Euro",
+    flag: "EU",
+    diff: 20,
   },
-}
+  cad: {
+    name: "Canadian dollar",
+    flag: "CA",
+    diff: 50,
+  },
+  zar: {
+    name: "South African rand",
+    flag: "ZA",
+    diff: 10,
+  },
+  aed: {
+    name: "United Arab Emirates dirham",
+    flag: "AE",
+    diff: 20,
+  },
+  ghs: {
+    name: "Ghanaian Cedi",
+    flag: "GH",
+    diff: 10,
+  },
+  xaf: {
+    name: "CFA franc BEAC",
+    flag: "CF",
+    diff: 30,
+  },
+  xof: {
+    name: "CFA franc BCEAO",
+    flag: "SN",
+    diff: 20,
+  },
+  cny: {
+    name: "Chinese Yuan",
+    flag: "CN",
+    diff: 10,
+  },
+  aud: {
+    name: "Australian Dollar",
+    flag: "AU",
+    diff: 30,
+  },
+};
+
+export const table1 = {
+  usd: {
+    name: "United States dollar",
+    flag: "US",
+  },
+  gbp: {
+    name: "Pound sterling",
+    flag: "US",
+  },
+  eur: {
+    name: "Euro",
+    flag: "EU",
+  },
+};
 
 //  [
 //   {
@@ -151,60 +162,73 @@ export const table1={
 //   }
 //  ]
 
-export const table2={
+export const table2 = {
   cad: {
-    name:"Canadian dollar",
-    flag:"CA"
+    name: "Canadian dollar",
+    flag: "CA",
   },
   zar: {
-    name:"South African rand",
-    flag:"ZA"
+    name: "South African rand",
+    flag: "ZA",
   },
   aed: {
-    name:"United Arab Emirates dirham",
-    flag:"AE"
-  },  
+    name: "United Arab Emirates dirham",
+    flag: "AE",
+  },
   cny: {
-    name:"Chinese Yuan",
-    flag:"CN"
+    name: "Chinese Yuan",
+    flag: "CN",
   },
   aud: {
-    name:"Australian Dollar",
-    flag:"AU"
+    name: "Australian Dollar",
+    flag: "AU",
   },
-}
+};
 
-export const table3={
+export const table3 = {
   ghs: {
-    name:"Ghanaian Cedi",
-    flag:"GH"
+    name: "Ghanaian Cedi",
+    flag: "GH",
   },
   xaf: {
-    name:"CFA franc BEAC",     
-     flag:"CF"
+    name: "CFA franc BEAC",
+    flag: "CF",
   },
   xof: {
-    name:"CFA franc BCEAO",
-    flag:"SN"
+    name: "CFA franc BCEAO",
+    flag: "SN",
   },
-}
+};
 
-
-export const getTableList=(currencyList:IPriceData,table:typeof table1|typeof table2|typeof table3,leadCurrency:keyof IPriceData,lastIndex:number)=>{
-  const last=lastIndex??currencyList[leadCurrency].length
-  const set=new Set()
-   return currencyList?.[leadCurrency].slice(0,last).map((mydata,index) => {
-      return({
-        date:format(new Date(currencyList[leadCurrency][index]?.[0]), "dd/MM/yyyy"),
-        list:  Object.keys(currencyList as IPriceData).filter((stats)=>table[stats as keyof typeof table]).map(value=>( {
-          sell:currencyList[value as keyof typeof  currencyList][index]?.[1],
-          buy:currencyList[value as keyof typeof  currencyList][index]?.[1]-currencyNames[value as keyof typeof  currencyNames].diff
-        }))
-      })
-    }   
-    ).filter(newStats=>{
-      const hasValue=set.has(newStats.date)
-      set.add(newStats.date)
-      return !hasValue && !(newStats.list.some((x)=>x.sell<=27))
+export const getTableList = (
+  currencyList: IPriceData,
+  table: typeof table1 | typeof table2 | typeof table3,
+  leadCurrency: keyof IPriceData,
+  lastIndex: number,
+) => {
+  const last = lastIndex ?? currencyList[leadCurrency].length;
+  const set = new Set();
+  return currencyList?.[leadCurrency]
+    .slice(0, last)
+    .map((mydata, index) => {
+      return {
+        date: format(
+          new Date(currencyList[leadCurrency][index]?.[0]),
+          "dd/MM/yyyy",
+        ),
+        list: Object.keys(currencyList as IPriceData)
+          .filter((stats) => table[stats as keyof typeof table])
+          .map((value) => ({
+            sell: currencyList[value as keyof typeof currencyList][index]?.[1],
+            buy:
+              currencyList[value as keyof typeof currencyList][index]?.[1] -
+              currencyNames[value as keyof typeof currencyNames].diff,
+          })),
+      };
     })
-}
+    .filter((newStats) => {
+      const hasValue = set.has(newStats.date);
+      set.add(newStats.date);
+      return !hasValue && !newStats.list.some((x) => x.sell <= 27);
+    });
+};

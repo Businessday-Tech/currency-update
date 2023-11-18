@@ -3,30 +3,28 @@ const navigation = [
   {
     name: "CRYPTO",
     current: false,
-    href:"/"
+    href: "/",
   },
   {
     name: "BUSINESS NEWS",
     current: false,
-    href:"https://businessday.ng/"
+    href: "https://businessday.ng/",
   },
   {
     name: "TRAVELS",
     current: false,
-    href:"https://businessday.ng/category/aviation/"
-
+    href: "https://businessday.ng/category/aviation/",
   },
   {
     name: "SPORTS",
     current: false,
-    href:"https://businessday.ng/category/sports/"
-
+    href: "https://businessday.ng/category/sports/",
   },
 
   {
     name: "BD CONFERENCES",
     current: false,
-    href:"https://conferences.businessday.ng/"
+    href: "https://conferences.businessday.ng/",
   },
 ];
 

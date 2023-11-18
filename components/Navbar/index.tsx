@@ -6,7 +6,7 @@ import AbokiWidget from "./AbokiWidget";
 const Navbar = () => {
   return (
     <div className=" bg-white">
-      <AbokiWidget/>
+      <AbokiWidget />
       <NavContent />
     </div>
   );
