@@ -16,7 +16,7 @@ interface Props {
   data: IPriceData;
 }
 //https://flagicons.lipis.dev/flags/4x3/us.svg
-const ExchangeTable = async ({ data }: Props) => {
+const ExchangeTable = ({ data }: Props) => {
   //    const data=Object.keys(data as IPriceData).reduce((acc,value)=>{
   //     if(value){acc[value as keyof IPriceData]=data?.[value as keyof typeof  data].reverse()}
   //     return acc
@@ -30,7 +30,7 @@ const ExchangeTable = async ({ data }: Props) => {
     }))
     .filter(
       ({ currency }) =>
-        table1[currency.code.toLowerCase().trim() as keyof typeof table1],
+        table1[currency.code.toLowerCase().trim() as keyof typeof table1]
     );
   const tableHeader2 = Object.keys(data as IPriceData)
     .map((value) => ({
@@ -41,7 +41,7 @@ const ExchangeTable = async ({ data }: Props) => {
     }))
     .filter(
       ({ currency }) =>
-        table2[currency.code.toLowerCase().trim() as keyof typeof table2],
+        table2[currency.code.toLowerCase().trim() as keyof typeof table2]
     );
   const tableHeader3 = Object.keys(data as IPriceData)
     .map((value) => ({
@@ -52,11 +52,11 @@ const ExchangeTable = async ({ data }: Props) => {
     }))
     .filter(
       ({ currency }) =>
-        table3[currency.code.toLowerCase().trim() as keyof typeof table3],
+        table3[currency.code.toLowerCase().trim() as keyof typeof table3]
     );
   const tableCurrencies = Object.keys(data as IPriceData).map(
     (value) =>
-      lookup.countries({ currencies: value.toUpperCase() })[0] as ICountryData,
+      lookup.countries({ currencies: value.toUpperCase() })[0] as ICountryData
   );
   const lengths = Object.keys(data as IPriceData).map((value) => ({
     [value]: data?.[value as keyof typeof data].length,

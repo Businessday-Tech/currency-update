@@ -25,7 +25,7 @@ export default async function Home() {
       }
       return acc;
     },
-    {} as { [K: string]: number },
+    {} as { [K: string]: number }
   );
 
   const blogDataRefined = blogData.map((x, i) => ({ ...x, isLive: i === 0 }));
@@ -45,7 +45,7 @@ export default async function Home() {
           <ExchangeTable data={data} />
         </div>
         <div className=" flex-1 hidden md:block">
-          <BlogsSection data={blogDataRefined} />
+          <BlogsSection data={blogDataRefined.slice(0, 5)} />
         </div>
       </div>
       <Footer />

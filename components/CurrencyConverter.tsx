@@ -1,5 +1,4 @@
 "use client";
-import { IExchange, IPriceData } from "@/bday";
 import { currencyNames } from "@/utils/utils";
 import Image from "next/image";
 import Script from "next/script";
@@ -106,7 +105,7 @@ const CurrencyConverter = ({ data }: { data: { [K: string]: number } }) => {
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 24 24"
               className="basis-[10%] text-3xl mb-5 sm:mb-0"
               height="1em"
